@@ -105,7 +105,7 @@ var ActivitiesButton = GObject.registerClass(
       const activeWorkspaceIndex =
         global.workspace_manager.get_active_workspace_index();
       for (let i = 0; i < activeWorkspaceIndex; i++) {
-        workspaceNames[i] = workspaceNames[i] ?? "";
+        workspaceNames[i] = workspaceNames[i] || "";
       }
       workspaceNames[activeWorkspaceIndex] = name;
       this._wmSettings.set_strv("workspace-names", workspaceNames);
